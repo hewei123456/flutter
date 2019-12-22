@@ -58,18 +58,14 @@ class _StatefulGroup extends State<IndexView> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-
-    return MaterialApp(
-      title: 'index',
-      home: Scaffold(
-          bottomNavigationBar: _renderBottomNavigationBar(),
-          body: MaterialApp(
-            theme: ThemeData(
-                primarySwatch: Colors.blue
-            ),
-            home: _renderCurrentView(),
-          )
-      ),
+    return Scaffold(
+        bottomNavigationBar: _renderBottomNavigationBar(),
+        body: MaterialApp(
+          theme: ThemeData(
+              primarySwatch: Colors.blue
+          ),
+          home: _renderCurrentView(),
+        )
     );
   }
 }

@@ -8,7 +8,7 @@ class HomeView extends StatefulWidget {
   _StatefulGroup createState() => _StatefulGroup();
 }
 
-class _StatefulGroup extends State<HomeView> with WidgetsBindingObserver {
+class _StatefulGroup extends State<HomeView> {
 
   @override
   void initState() {
@@ -20,40 +20,34 @@ class _StatefulGroup extends State<HomeView> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
-      title: 'home',
-      theme: ThemeData(
-          primarySwatch: Colors.blue
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-              '首页'
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+            '首页'
         ),
-        body: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-          ),
-          alignment: Alignment.center,
-          child: Column(
-            children: <Widget>[
-              Text(
-                '首页',
-                style: TextStyle(fontSize: 20),
-              ),
-              MaterialButton(
-                color: Colors.blue,
-                textColor: Colors.white,
-                child: Text('跳转详情'),
-                onPressed: () {
-                  setState(() {
-                    widget.navigateToDetail();
-                  });
-                },
-              )
-            ],
-          ),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+        ),
+        alignment: Alignment.center,
+        child: Column(
+          children: <Widget>[
+            Text(
+              '首页',
+              style: TextStyle(fontSize: 20),
+            ),
+            MaterialButton(
+              color: Colors.blue,
+              textColor: Colors.white,
+              child: Text('跳转详情'),
+              onPressed: () {
+                setState(() {
+                  widget.navigateToDetail();
+                });
+              },
+            )
+          ],
         ),
       ),
     );

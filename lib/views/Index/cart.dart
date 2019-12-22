@@ -15,30 +15,24 @@ class _StatefulGroup extends State<CartView> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
-      title: 'cart',
-      theme: ThemeData(
-          primarySwatch: Colors.blue
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-              '购物车'
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+            '购物车'
         ),
-        body: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-          ),
-          alignment: Alignment.center,
-          child: Column(
-            children: <Widget>[
-              Text(
-                'CartView',
-                style: TextStyle(fontSize: 20),
-              )
-            ],
-          ),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+        ),
+        alignment: Alignment.center,
+        child: Column(
+          children: <Widget>[
+            Text(
+              'CartView',
+              style: TextStyle(fontSize: 20),
+            )
+          ],
         ),
       ),
     );
