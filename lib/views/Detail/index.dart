@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
-class DetailView extends StatelessWidget {
+class DetailView extends StatefulWidget {
+  _StatefulGroup createState() => _StatefulGroup();
+}
+
+class _StatefulGroup extends State<DetailView> {
+  double moveX = 0.0,
+      moveY = 0.0;
+
+  /*--------methods--------*/
+  _move(DragUpdateDetails e) {
+    setState(() {
+      moveX += e.delta.dx;
+      moveY += e.delta.dy;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -20,15 +35,20 @@ class DetailView extends StatelessWidget {
               child: Icon(Icons.arrow_back, color: Colors.white),
             ),
           ),
-          body: FractionallySizedBox(
-            widthFactor: 1,
-            child: Column(
+          body: Container(
+            child: Stack(
               children: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    print('手势监听');
-                  },
-                  child: Text('xiangqingye'),
+                Positioned(
+                  left: moveX,
+                  top: moveY,
+                  child: GestureDetector(
+                    onPanUpdate: (e) => _move(e),
+                    child: Image(
+                      width: 750,
+                      height: 100,
+                      image: AssetImage('static/carousel_00.jpg'),
+                    ),
+                  ),
                 )
               ],
             ),

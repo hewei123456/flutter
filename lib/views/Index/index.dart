@@ -12,13 +12,10 @@ class IndexView extends StatefulWidget {
 class _StatefulGroup extends State<IndexView> {
   int _currentIndex = 0;
   String contentText;
-  BuildContext _context;
 
   /*=======methods========*/
   _navigateToDetail() {
-    Navigator.push(_context, new MaterialPageRoute(
-      builder: (context) => new DetailView(),
-    ));
+    Navigator.of(context).pushNamed('detail');
   }
 
   /*=======render========*/
@@ -61,7 +58,6 @@ class _StatefulGroup extends State<IndexView> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    _context = context;
 
     return MaterialApp(
       title: 'index',
