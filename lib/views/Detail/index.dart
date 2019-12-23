@@ -5,8 +5,7 @@ class DetailView extends StatefulWidget {
 }
 
 class _StatefulGroup extends State<DetailView> {
-  double moveX = 0.0,
-      moveY = 0.0;
+  double moveX = 0.0, moveY = 0.0;
 
   /*--------methods--------*/
   _move(DragUpdateDetails e) {
@@ -23,24 +22,15 @@ class _StatefulGroup extends State<DetailView> {
         appBar: AppBar(
           title: Text('详情页'),
         ),
-        body: Container(
-          child: Stack(
-            children: <Widget>[
-              Positioned(
-                left: moveX,
-                top: moveY,
-                child: GestureDetector(
-                  onPanUpdate: (e) => _move(e),
-                  child: Image(
-                    width: 750,
-                    height: 100,
-                    image: AssetImage('static/carousel_00.jpg'),
-                  ),
-                ),
-              )
-            ],
-          ),
-        )
-    );
+        body: Flex(
+          direction: Axis.vertical,
+          children: <Widget>[
+            Expanded(
+              child: Image(
+                image: AssetImage('static/carousel_00.jpg'),
+              ),
+            ),
+          ],
+        ));
   }
 }
