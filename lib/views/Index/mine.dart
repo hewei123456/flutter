@@ -10,12 +10,28 @@ class MineView extends StatefulWidget {
 class _StatefulGroup extends State<MineView> {
   File _image;
 
-  Future getImage() async {
+  Future _getImage() async {
     var image = await ImagePicker.pickImage(source: ImageSource.gallery);
 
     setState(() {
       _image = image;
     });
+  }
+
+  renderActionItem(String title, bool isTakePhoto) {}
+
+  _showActionSheet() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) => Container(
+              height: 160,
+              child: Column(
+                children: <Widget>[
+                  renderActionItem('拍照', true),
+                  renderActionItem('从相册选择', true),
+                ],
+              ),
+            ));
   }
 
   @override
@@ -25,12 +41,10 @@ class _StatefulGroup extends State<MineView> {
         title: Text('我的'),
       ),
       body: Center(
-        child: _image == null
-            ? Text('No image selected.')
-            : Image.file(_image),
+        child: _image == null ? Text('No image selected.') : Image.file(_image),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: getImage,
+        onPressed: _getImage,
         tooltip: 'Pick Image',
         child: Icon(Icons.add_a_photo),
       ),
