@@ -5,10 +5,10 @@ class HomeView extends StatefulWidget {
 
   const HomeView({Key key, this.navigateToDetail}) : super(key: key);
 
-  _StatefulGroup createState() => _StatefulGroup();
+  _HomeState createState() => _HomeState();
 }
 
-class _StatefulGroup extends State<HomeView> {
+class _HomeState extends State<HomeView> {
 
   @override
   void initState() {

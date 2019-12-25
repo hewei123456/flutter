@@ -4,10 +4,10 @@ import 'package:image_picker/image_picker.dart';
 
 class MineView extends StatefulWidget {
   @override
-  _StatefulGroup createState() => _StatefulGroup();
+  _MineState createState() => _MineState();
 }
 
-class _StatefulGroup extends State<MineView> {
+class _MineState extends State<MineView> {
   File _image;
 
   Future _getImage() async {
@@ -18,7 +18,7 @@ class _StatefulGroup extends State<MineView> {
     });
   }
 
-  renderActionItem(String title, bool isTakePhoto) {}
+  _renderActionItem(String title, bool isTakePhoto) {}
 
   _showActionSheet() {
     showModalBottomSheet(
@@ -27,8 +27,8 @@ class _StatefulGroup extends State<MineView> {
               height: 160,
               child: Column(
                 children: <Widget>[
-                  renderActionItem('拍照', true),
-                  renderActionItem('从相册选择', true),
+                  _renderActionItem('拍照', true),
+                  _renderActionItem('从相册选择', true),
                 ],
               ),
             ));

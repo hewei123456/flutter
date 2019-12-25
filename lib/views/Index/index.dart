@@ -6,10 +6,10 @@ import 'package:flutter_app/views/Detail/index.dart';
 
 class IndexView extends StatefulWidget {
   @override
-  _StatefulGroup createState() => _StatefulGroup();
+  _IndexState createState() => _IndexState();
 }
 
-class _StatefulGroup extends State<IndexView> {
+class _IndexState extends State<IndexView> {
   int _currentIndex = 0;
   String contentText;
 

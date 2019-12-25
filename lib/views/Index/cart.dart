@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CartView extends StatefulWidget {
-  _StatefulGroup createState() => _StatefulGroup();
+  _CartState createState() => _CartState();
 }
 
-class _StatefulGroup extends State<CartView> {
+class _CartState extends State<CartView> {
   @override
   void initState() {
     // TODO: implement initState
