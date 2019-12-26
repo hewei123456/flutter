@@ -32,20 +32,35 @@ class _IndexState extends State<IndexView> {
       currentIndex: _currentIndex,
       items: [
         BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.grey,),
-            activeIcon: Icon(Icons.home, color: Colors.blue,),
-            title: Text('首页')
-        ),
+            icon: Icon(
+              Icons.home,
+              color: Colors.grey,
+            ),
+            activeIcon: Icon(
+              Icons.home,
+              color: Colors.blue,
+            ),
+            title: Text('首页')),
         BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart, color: Colors.grey,),
-            activeIcon: Icon(Icons.shopping_cart, color: Colors.blue,),
-            title: Text('购物车')
-        ),
+            icon: Icon(
+              Icons.shopping_cart,
+              color: Colors.grey,
+            ),
+            activeIcon: Icon(
+              Icons.shopping_cart,
+              color: Colors.blue,
+            ),
+            title: Text('购物车')),
         BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.grey,),
-            activeIcon: Icon(Icons.person, color: Colors.blue,),
-            title: Text('我的')
-        )
+            icon: Icon(
+              Icons.person,
+              color: Colors.grey,
+            ),
+            activeIcon: Icon(
+              Icons.person,
+              color: Colors.blue,
+            ),
+            title: Text('我的'))
       ],
       onTap: (index) {
         setState(() {
@@ -61,11 +76,8 @@ class _IndexState extends State<IndexView> {
     return Scaffold(
         bottomNavigationBar: _renderBottomNavigationBar(),
         body: MaterialApp(
-          theme: ThemeData(
-              primarySwatch: Colors.blue
-          ),
+          theme: ThemeData(primarySwatch: Colors.blue),
           home: _renderCurrentView(),
-        )
-    );
+        ));
   }
 }
