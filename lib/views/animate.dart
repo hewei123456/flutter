@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class DetailView extends StatefulWidget {
-  _DetailState createState() => _DetailState();
+class AnimateView extends StatefulWidget {
+  _AnimateState createState() => _AnimateState();
 }
 
-class _DetailState extends State<DetailView>
+class _AnimateState extends State<AnimateView>
     with SingleTickerProviderStateMixin {
   double moveX = 0.0, moveY = 0.0;
   Animation<double> animation;
@@ -55,7 +55,7 @@ class _DetailState extends State<DetailView>
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('详情页'),
+        title: Text('Animate'),
       ),
       body: SingleChildScrollView(
           child: Column(
