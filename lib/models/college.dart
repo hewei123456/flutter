@@ -1,17 +1,17 @@
-class CollegeModel {
+class CollegesModel {
   int code;
   String msg;
-  List<Data> data;
+  List<CollegeModel> data;
 
-  CollegeModel({this.code, this.msg, this.data});
+  CollegesModel({this.code, this.msg, this.data});
 
-  CollegeModel.fromJson(Map<String, dynamic> json) {
+  CollegesModel.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     msg = json['msg'];
     if (json['data'] != null) {
-      data = new List<Data>();
+      data = new List<CollegeModel>();
       json['data'].forEach((v) {
-        data.add(new Data.fromJson(v));
+        data.add(new CollegeModel.fromJson(v));
       });
     }
   }
@@ -27,7 +27,7 @@ class CollegeModel {
   }
 }
 
-class Data {
+class CollegeModel {
   int id;
   int addTime;
   String name;
@@ -46,7 +46,7 @@ class Data {
   Null nationalClassB;
   Null worldClassA;
 
-  Data(
+  CollegeModel(
       {this.id,
       this.addTime,
       this.name,
@@ -65,7 +65,7 @@ class Data {
       this.nationalClassB,
       this.worldClassA});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  CollegeModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     addTime = json['add_time'];
     name = json['name'];
